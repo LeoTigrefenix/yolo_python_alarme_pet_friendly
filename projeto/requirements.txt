@@ -1,0 +1,4 @@
+ultralytics
+opencv-python
+playsound
+pygame  # opcional, se playsound não funcionar no seu sistema
