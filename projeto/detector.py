@@ -1,6 +1,8 @@
 import cv2
 from ultralytics import YOLO
-from playsound import playsound  # ou use pygame se preferir
+# from playsound import playsound  # ou use pygame se preferir
+import pygame
+
 import time
 
 # Carrega o modelo YOLO
@@ -36,7 +38,10 @@ while True:
             current_time = time.time()
             if current_time - last_alarm_time > alarm_interval:
                 print("⚠️ Pessoa detectada! Disparando alarme...")
-                playsound("alarme.mp3")
+                pygame.mixer.init()
+                pygame.mixer.music.load("alarme.mp3")
+                pygame.mixer.music.play()
+
                 last_alarm_time = current_time
 
     if cv2.waitKey(1) == ord("q"):

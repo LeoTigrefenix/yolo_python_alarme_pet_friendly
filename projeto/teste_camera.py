@@ -14,5 +14,8 @@ while True:
 cap.release()
 cv2.destroyAllWindows()
 
-from playsound import playsound
-playsound('alarme.mp3')
+import pygame
+pygame.mixer.init()
+pygame.mixer.music.load("alarme.mp3")
+pygame.mixer.music.play()
+
